@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class Dicionario implements Runnable{
     private final Socket socket;
@@ -20,7 +19,6 @@ public class Dicionario implements Runnable{
        
     @Override
         public void run(){
-            Scanner scanner = new Scanner(System.in);
             try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));) {
                 out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
                 Map<String, String> dicionario = new HashMap<>();

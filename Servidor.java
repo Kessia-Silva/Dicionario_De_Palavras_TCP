@@ -16,6 +16,7 @@ public class Servidor{
             }
 
         } catch (Exception e) {
+            System.out.println("Cliente desconectou: " + e.getMessage());
         }
     }
 }
